@@ -1,0 +1,37 @@
+.Footer {
+  background-color: #00c4d4;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.Text__footer {
+  text-align: center;
+}
+
+.Logo__footer {
+  width: 4.5vw;
+}
+
+.Icons {
+  display: flex;
+  gap: 10px;
+}
+
+.Wpp__icon {
+  width: 2.5vw;
+  cursor: pointer;
+}
+
+.Email__icon {
+  width: 2.5vw;
+  cursor: pointer;
+}
+
+.Instagram__icon {
+  width: 2.5vw;
+  cursor: pointer;
+}

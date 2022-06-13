@@ -20,7 +20,7 @@ const Card = ({ list }) => {
       </div>
       <h3 className="Flavor">{list.flavor}</h3>
       <p className="Description">{list.description}</p>
-      <button className="Button" onClick={() => toast.error("Sessão em desenvolvimento")}>ADD</button>
+      <button className="Button" onClick={() => toast.error("Sessão em desenvolvimento")}>ADD TO CART</button>
     </div>
   );
 };

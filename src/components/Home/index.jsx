@@ -1,5 +1,5 @@
 import "./style.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "../Cards";
 
 const Home = () => {
@@ -13,8 +13,11 @@ const Home = () => {
 
     setList(listPalettes)
   };
-
+//CICLO DE VIDA MONTAGEM (ARRAY VAZIO)
+useEffect(() => {
   getPalettes();
+}, [])
+
   return (
     <div className="Home__container">
       <h1 className="Subtitle">Lista de Paletas</h1>

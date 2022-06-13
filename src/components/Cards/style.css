@@ -1,5 +1,7 @@
 .Card__container {
-  border: 1px solid black;
+  background-color: #0093A1;
+  border: 1.6px solid black;
+  border-radius: 3px;
   width: 100px;
   height: 170px;
   padding: 8px;
@@ -17,6 +19,7 @@
 .Price {
   margin-top: 15px;
   font-size: smaller;
+  color: black;
 }
 
 .Image {
@@ -28,16 +31,18 @@
   font-size: small;
   margin-top: 5px;
   margin-bottom: 5px;
+  color: black;
 }
 
 .Description {
   font-size: x-small;
   height: 35px;
   margin-bottom: 5px;
+  color: #0BE07B;
 }
 
 .Button {
   cursor: pointer;
-  color: rgb(34, 158, 41);
-  background-color: transparent;
+  background-color: #42CEDB;
+  border-radius: 3px;
 }

@@ -1,6 +1,13 @@
 import "./style.css";
+import { toast } from "react-hot-toast";
 
 const Card = ({ list }) => {
+
+//A função do toast pode ser criada diretamente no onCLick
+// const errorMessage = () => {
+// toast.error("Sessão em desenvolvimento")
+// }
+
   return (
     <div className="Card__container">
       <div className="Card__img__price">
@@ -13,7 +20,7 @@ const Card = ({ list }) => {
       </div>
       <h3 className="Flavor">{list.flavor}</h3>
       <p className="Description">{list.description}</p>
-      <button className="Button">ADD</button>
+      <button className="Button" onClick={() => toast.error("Sessão em desenvolvimento")}>ADD</button>
     </div>
   );
 };

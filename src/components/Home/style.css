@@ -1,5 +1,4 @@
 .Home__container {
-    border: 3px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;

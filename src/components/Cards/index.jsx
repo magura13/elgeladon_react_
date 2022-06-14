@@ -3,6 +3,7 @@ import { toast } from "react-hot-toast";
 import deleteIcon from "../../assets/icons/delete.png";
 import editIcon from "../../assets/icons/edit.png";
 import ModalDeletePalette from "../Modals/ModalDeletePalette";
+import ModalEditPalette from "../Modals/ModalEditPalette";
 import { useState } from "react";
 
 const Card = ({ list, getPalettes }) => {
@@ -11,6 +12,11 @@ const Card = ({ list, getPalettes }) => {
   // toast.error("Sessão em desenvolvimento")
   // }
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+
+  const handleShowEditModal = () => {
+    setShowEditModal(!showEditModal);
+  };
 
   const handleShowDeleteModal = () => {
     setShowDeleteModal(!showDeleteModal);
@@ -35,7 +41,7 @@ const Card = ({ list, getPalettes }) => {
             alt="Icone de remoção"
             title="Remover"
           />
-          <img src={editIcon} alt="Icone de edição" title="Editar" />
+          <img onClick={handleShowEditModal} src={editIcon} alt="Icone de edição" title="Editar" />
         </div>
         <button
           className="Button"
@@ -47,6 +53,13 @@ const Card = ({ list, getPalettes }) => {
       {showDeleteModal && (
         <ModalDeletePalette
           closeModal={handleShowDeleteModal}
+          list={list}
+          getPalettes={getPalettes}
+        />
+      )}
+      {showEditModal && (
+        <ModalEditPalette
+          closeModal={handleShowEditModal}
           list={list}
           getPalettes={getPalettes}
         />

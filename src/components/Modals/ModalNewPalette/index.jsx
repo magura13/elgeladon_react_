@@ -1,8 +1,8 @@
 import "./style.css";
 import { useState } from "react";
-import {toast} from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
-const ModalNewPalette = ({closeModal}) => {
+const ModalNewPalette = ({ closeModal,getPalettes }) => {
   const [flavor, setFlavor] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
@@ -15,25 +15,28 @@ const ModalNewPalette = ({closeModal}) => {
       description,
       img,
     };
-//o fetch se não for definido faz um GET, se não for get eu tenho que definir.
+    //o fetch se não for definido faz um GET, se não for get eu tenho que definir.
     const response = await fetch(
-      "http://localhost:8080/palettes/createNewPalette",//url de criação
+      "http://localhost:8080/palettes/createNewPalette", //url de criação
       {
-        method: "POST",//defino o método
-        headers: { "Content-Type": "application/json" },//explico que será por JSON
-        mode: "cors",//ativo o cors
-        body: JSON.stringify(newPalette),//envio os dados em formato de string no json os dados que vem do newPalette
+        method: "POST", //defino o método
+        headers: { "Content-Type": "application/json" }, //explico que será por JSON
+        mode: "cors", //ativo o cors
+        body: JSON.stringify(newPalette), //envio os dados em formato de string no json os dados que vem do newPalette
       }
     );
 
-    const palette = await response.json();
+    if (response.status !== 201) {
+      return toast.error("Falha na criação da paleta!");
+    }
 
-if(palette._id){
-  toast.success("Paleta adicionada com sucesso!");
-} else {
-  toast.error("Paleta não foi criada corretamente!");
-}
-
+    setFlavor("");
+    setDescription("");
+    setImage("");
+    setPrice("");
+    closeModal();
+    getPalettes();
+    toast.success("Paleta criada com successo!");
   };
 
   return (

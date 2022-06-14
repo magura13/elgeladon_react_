@@ -1,22 +1,7 @@
 import "./style.css";
-import { useState, useEffect } from "react";
 import Card from "../Cards";
 
-const Home = () => {
-  const [list, setList] = useState([]);
-
-  const getPalettes = async () => {
-    const response = await fetch(
-      "http://localhost:8080/palettes/getAllPalettes"
-    );
-    const listPalettes = await response.json();
-
-    setList(listPalettes)
-  };
-//CICLO DE VIDA MONTAGEM (ARRAY VAZIO)
-useEffect(() => {
-  getPalettes();
-}, [])
+const Home = ({list}) => {
 
   return (
     <div className="Home__container">

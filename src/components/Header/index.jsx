@@ -6,7 +6,7 @@ import cartIcon from "../../assets/icons/add-to-cart.png";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 
-const Header = () => {
+const Header = ({getPalettes}) => {
   const [showModalCreate, setShowModalCreate] = useState(false);
 
 const handleShowModalCreate = () => {
@@ -35,7 +35,7 @@ const handleShowModalCreate = () => {
           />
         </div>
       </div>
-      {showModalCreate && <ModalNewPalette closeModal={handleShowModalCreate}/>}
+      {showModalCreate && <ModalNewPalette closeModal={handleShowModalCreate} getPalettes={getPalettes}/>}
     </>
   );
 };

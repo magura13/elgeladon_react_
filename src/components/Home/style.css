@@ -6,6 +6,12 @@
     min-height: calc(80vh - 6rem);
 }
 
+.Home__container > input {
+    margin-bottom: 2rem;
+    border: 1.5px solid black;
+    border-radius: 2px;
+}
+
 .Subtitle {
 font-size: x-large;
 font-weight: 300;

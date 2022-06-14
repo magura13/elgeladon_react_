@@ -17,7 +17,7 @@ const ModalNewPalette = ({ closeModal,getPalettes }) => {
     };
     //o fetch se não for definido faz um GET, se não for get eu tenho que definir.
     const response = await fetch(
-      "http://localhost:8080/palettes/createNewPalette", //url de criação
+      "https://elgeladonapi.herokuapp.com/palettes/createNewPalette", //url de criação
       {
         method: "POST", //defino o método
         headers: { "Content-Type": "application/json" }, //explico que será por JSON

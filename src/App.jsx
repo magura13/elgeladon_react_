@@ -26,7 +26,7 @@ const App = () => {
     <>
       <Toaster position="bottom-center" />
       <Header getPalettes={getPalettes}/>
-      <Home list={list}/>
+      <Home list={list} getPalettes={getPalettes}/>
       <Footer />
     </>
   );

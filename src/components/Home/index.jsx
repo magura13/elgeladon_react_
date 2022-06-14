@@ -2,7 +2,7 @@ import "./style.css";
 import Card from "../Cards";
 import { useState } from "react";
 
-const Home = ({ list }) => {
+const Home = ({ list, getPalettes }) => {
   const [filterInput, setFilterInput] = useState("");
 
   return (
@@ -15,12 +15,26 @@ const Home = ({ list }) => {
       <div className="Cards">
         {filterInput !== ""
           ? list
-              .filter((element) => element.flavor.toLowerCase().includes(filterInput.toLowerCase()))
+              .filter((element) =>
+                element.flavor.toLowerCase().includes(filterInput.toLowerCase())
+              )
               .map((element) => {
-                return <Card key={element._id} list={element} />;
+                return (
+                  <Card
+                    getPalettes={getPalettes}
+                    key={element._id}
+                    list={element}
+                  />
+                );
               })
           : list.map((element) => {
-              return <Card key={element._id} list={element} />;
+              return (
+                <Card
+                  getPalettes={getPalettes}
+                  key={element._id}
+                  list={element}
+                />
+              );
             })}
       </div>
     </div>

@@ -1,0 +1,23 @@
+.ModalDeletePalette__overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #13010185;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ModalDeletePalette {
+    width: 30vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+  

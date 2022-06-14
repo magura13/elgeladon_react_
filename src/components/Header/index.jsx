@@ -1,10 +1,10 @@
 import "./style.css";
 import ModalNewPalette from "../Modals/ModalNewPalette";
 import logo from "../../assets/icons/logo.svg";
-import bagIcon from "../../assets/icons/bag.svg";
+// import bagIcon from "../../assets/icons/bag.svg";
 import cartIcon from "../../assets/icons/add-to-cart.png";
 import { useState } from "react";
-import { toast } from "react-hot-toast";
+// import { toast } from "react-hot-toast";
 
 const Header = ({getPalettes}) => {
   const [showModalCreate, setShowModalCreate] = useState(false);
@@ -26,13 +26,14 @@ const handleShowModalCreate = () => {
             className="CartIcon"
             src={cartIcon}
             alt="Cart Elgelad Icon"
+            title="Adicionar nova paleta ao cardápio"
           />
-          <img
+          {/* <img
             onClick={() => toast.error("Sessão em desenvolvimento")}
             className="BagIcon"
             src={bagIcon}
             alt="Bag Elgelad Icon"
-          />
+          /> */}
         </div>
       </div>
       {showModalCreate && <ModalNewPalette closeModal={handleShowModalCreate} getPalettes={getPalettes}/>}
